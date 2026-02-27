@@ -6,9 +6,6 @@
   <title>Contact | Crown Dental Clinic</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-  <a class="whatsapp-float" href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  WhatsApp
-</a>
 <body>
 
 <header>
@@ -27,47 +24,108 @@
 <section class="services-preview">
   <div class="container">
     <h2>Book an Appointment</h2>
-    <p>Select your preferred branch and book directly on WhatsApp.</p>
+    <p>Select your branch, then book on WhatsApp or submit the booking form.</p>
 
-    <div class="service-grid" style="margin-top:30px;">
+    <!-- Branch selector -->
+    <div class="card" style="max-width:720px; margin: 18px auto; text-align:left;">
+      <label for="branch" style="font-weight:700;">Choose Branch</label>
+      <select id="branch" style="width:100%; padding:12px; margin-top:10px; border-radius:10px; border:1px solid #d9e3ea;">
+        <option value="makeni" selected>Makeni Branch (Makeni Mall)</option>
+        <option value="munali">Munali Branch (Munali Road)</option>
+      </select>
 
-      <!-- Makeni Branch -->
-      <div class="card">
-        <h3>Makeni Branch</h3>
-        <p>Makeni Mall, 1st Floor<br>Lusaka, Zambia</p>
-        <p><strong>Phone:</strong> +260 975 623 433</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
+        <a id="waBtn" class="btn-primary" target="_blank" rel="noopener"
+           href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic%20Makeni,%20I%20would%20like%20to%20book%20an%20appointment.">
+          Book on WhatsApp
+        </a>
 
-        <div style="margin-top:15px;">
-          <a href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic%20Makeni,%20I%20would%20like%20to%20book%20an%20appointment."
-             class="btn-primary">Book on WhatsApp</a>
-        </div>
+        <a id="callBtn" class="btn-secondary" href="tel:+260975623433">Call Now</a>
 
-        <div style="margin-top:10px;">
-          <a href="tel:+260975623433" class="btn-secondary">Call Now</a>
-        </div>
+        <a id="dirBtn" class="btn-secondary" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=G7W8%2BGCR%2C%20Lusaka%2C%20Zambia">
+          Get Directions
+        </a>
       </div>
 
-      <!-- Munali Branch -->
-      <div class="card">
-        <h3>Munali Branch</h3>
-        <p>Munali Road / Mosi-oa-Tunya Area<br>Lusaka, Zambia</p>
-        <p><strong>Phone:</strong> +260 9XX XXX XXX</p>
-
-        <div style="margin-top:15px;">
-          <a href="https://wa.me/2609XXXXXXXX?text=Hello%20Crown%20Dental%20Clinic%20Munali,%20I%20would%20like%20to%20book%20an%20appointment."
-             class="btn-primary">Book on WhatsApp</a>
-        </div>
-
-        <div style="margin-top:10px;">
-          <a href="tel:+2609XXXXXXXX" class="btn-secondary">Call Now</a>
-        </div>
-      </div>
-
+      <p id="branchInfo" style="margin-top:14px;">
+        <strong>Makeni Branch:</strong> Makeni Mall, 1st Floor, Lusaka (G7W8+GCR). Phone/WhatsApp: +260 975 623 433
+      </p>
     </div>
 
-    <div style="margin-top:40px; text-align:center;">
-      <h3>General Enquiries</h3>
-      <p>Email: info@crowndentalzambia.com</p>
+    <!-- Booking form (email) -->
+    <div class="card" style="max-width:720px; margin: 18px auto; text-align:left;">
+      <h3 style="margin-top:0;">Online Booking Form</h3>
+      <p style="margin-top:6px;">Fill in details and we will confirm your appointment.</p>
+
+      <!-- Replace YOUR_EMAIL_HERE with your real email -->
+      <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="New Appointment Request - Crown Dental Clinic" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+
+        <div style="display:grid; gap:12px;">
+          <input name="Full Name" required placeholder="Full Name"
+                 style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;" />
+
+          <input name="Phone Number" required placeholder="Phone Number"
+                 style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;" />
+
+          <select name="Branch" id="branchForm"
+                  style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;">
+            <option value="Makeni Branch" selected>Makeni Branch</option>
+            <option value="Munali Branch">Munali Branch</option>
+          </select>
+
+          <input name="Preferred Date" placeholder="Preferred Date (e.g. 02 March 2026)"
+                 style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;" />
+
+          <input name="Preferred Time" placeholder="Preferred Time (e.g. 10:00)"
+                 style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;" />
+
+          <select name="Service"
+                  style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;">
+            <option>Routine Check-Up</option>
+            <option>Cleaning</option>
+            <option>Tooth Pain / Emergency</option>
+            <option>Teeth Whitening</option>
+            <option>Braces Consultation</option>
+            <option>Other</option>
+          </select>
+
+          <textarea name="Notes" placeholder="Short message (optional)"
+                    style="padding:12px; border-radius:10px; border:1px solid #d9e3ea; min-height:110px;"></textarea>
+
+          <button type="submit" class="btn-primary" style="border:none; cursor:pointer;">
+            Submit Booking Request
+          </button>
+        </div>
+      </form>
+
+      <p style="margin-top:14px; font-size:14px; opacity:0.8;">
+        Note: First-time FormSubmit setup will email you a confirmation link to activate delivery.
+      </p>
+    </div>
+
+    <!-- Maps -->
+    <div class="service-grid" style="margin-top:22px;">
+      <div class="card" style="text-align:left;">
+        <h3 style="margin-top:0;">Makeni Branch Map</h3>
+        <iframe
+          src="https://www.google.com/maps?q=G7W8%2BGCR%2C%20Lusaka%2C%20Zambia&output=embed"
+          width="100%" height="280" style="border:0; border-radius:12px;"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="card" style="text-align:left;">
+        <h3 style="margin-top:0;">Munali Branch Map</h3>
+        <!-- Replace this with Munali exact embed once you send the location -->
+        <iframe
+          src="https://www.google.com/maps?q=Munali%20Road%2C%20Lusaka%2C%20Zambia&output=embed"
+          width="100%" height="280" style="border:0; border-radius:12px;"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
 
   </div>
@@ -78,6 +136,58 @@
     <p>© 2026 Crown Dental Clinic | Lusaka, Zambia</p>
   </div>
 </footer>
+
+<!-- Floating WhatsApp button (Makeni default) -->
+<a class="whatsapp-float" href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic,%20I%20would%20like%20to%20book%20an%20appointment."
+   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+
+<script>
+  // Replace Munali numbers + links once you provide them
+  const BRANCH = {
+    makeni: {
+      label: "Makeni Branch",
+      phone: "+260975623433",
+      waText: "Hello Crown Dental Clinic Makeni, I would like to book an appointment.",
+      directions: "https://www.google.com/maps/search/?api=1&query=G7W8%2BGCR%2C%20Lusaka%2C%20Zambia",
+      info: "<strong>Makeni Branch:</strong> Makeni Mall, 1st Floor, Lusaka (G7W8+GCR). Phone/WhatsApp: +260 975 623 433"
+    },
+    munali: {
+      label: "Munali Branch",
+      phone: "+2609XXXXXXXX", // <-- CHANGE THIS
+      waText: "Hello Crown Dental Clinic Munali, I would like to book an appointment.",
+      directions: "https://www.google.com/maps/search/?api=1&query=Munali%20Road%2C%20Lusaka%2C%20Zambia",
+      info: "<strong>Munali Branch:</strong> Munali Road, Lusaka. Phone/WhatsApp: (add line here)"
+    }
+  };
+
+  const branchSel = document.getElementById("branch");
+  const waBtn = document.getElementById("waBtn");
+  const callBtn = document.getElementById("callBtn");
+  const dirBtn  = document.getElementById("dirBtn");
+  const branchInfo = document.getElementById("branchInfo");
+  const branchForm = document.getElementById("branchForm");
+
+  function setBranch(key){
+    const b = BRANCH[key];
+    const wa = "https://wa.me/" + b.phone.replace("+","") + "?text=" + encodeURIComponent(b.waText);
+
+    waBtn.href = wa;
+    callBtn.href = "tel:" + b.phone;
+    dirBtn.href = b.directions;
+    branchInfo.innerHTML = b.info;
+
+    // Sync form branch
+    branchForm.value = b.label;
+    // Sync floating WhatsApp button to selected branch
+    const floatBtn = document.querySelector(".whatsapp-float");
+    if(floatBtn) floatBtn.href = wa;
+  }
+
+  branchSel.addEventListener("change", (e)=> setBranch(e.target.value));
+
+  // init
+  setBranch(branchSel.value);
+</script>
 
 </body>
 </html>
