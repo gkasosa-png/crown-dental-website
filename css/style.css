@@ -186,3 +186,57 @@ footer {
 }
 .wa-menu a:hover{ background:#f2f6f9; }
 .wa-float:hover .wa-menu{ display:block; }
+    /* ===== HEADER UPGRADE ===== */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+}
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 90px;   /* Bigger logo */
+  height: auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-crown {
+  font-size: 22px;
+  font-weight: 800;
+  color: #f7931e; /* Orange */
+}
+
+.brand-dental {
+  font-size: 18px;
+  font-weight: 700;
+  color: #00a3e0; /* Blue */
+}
+
+nav a {
+  margin-left: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #0a3d62;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #f7931e;
+}
+
+nav a.active {
+  color: #00a3e0;
+  font-weight: 800;
+}
