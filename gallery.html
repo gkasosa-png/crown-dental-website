@@ -6,22 +6,17 @@
   <title>Gallery | Crown Dental Clinic</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-  <a class="whatsapp-float" href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  WhatsApp
-</a>
 <body>
 
 <header>
   <div class="container nav">
     <img src="logo.jpg" alt="Crown Dental Clinic Logo" class="logo" />
     <nav>
-     <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-</nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -29,15 +24,19 @@
 <section class="services-preview">
   <div class="container">
     <h2>Gallery</h2>
-    <p>Add your clinic photos here. For now, these are placeholders.</p>
+    <p>Add clinic photos here (reception, treatment rooms, team, before/after with consent).</p>
 
-    <div class="service-grid" style="margin-top:24px;">
+    <div class="service-grid" style="margin-top:22px;">
       <div class="card">Photo 1</div>
       <div class="card">Photo 2</div>
       <div class="card">Photo 3</div>
       <div class="card">Photo 4</div>
       <div class="card">Photo 5</div>
       <div class="card">Photo 6</div>
+    </div>
+
+    <div style="text-align:center; margin-top:28px;">
+      <a href="contact.html" class="btn-primary">Book an Appointment</a>
     </div>
   </div>
 </section>
@@ -48,10 +47,16 @@
   </div>
 </footer>
 
-</body>
-  <a class="whatsapp-float"
-   href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic,%20I%20would%20like%20to%20book%20an%20appointment."
-   target="_blank" rel="noopener">WhatsApp</a>
+<div class="wa-float">
+  <button class="wa-main" type="button">WhatsApp</button>
+  <div class="wa-menu">
+    <a href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic%20Makeni,%20I%20would%20like%20to%20book%20an%20appointment."
+       target="_blank" rel="noopener">Book Makeni</a>
+    <a href="https://wa.me/260776112421?text=Hello%20Crown%20Dental%20Clinic%20Munali,%20I%20would%20like%20to%20book%20an%20appointment."
+       target="_blank" rel="noopener">Book Munali</a>
+  </div>
+</div>
 
 <script src="script.js"></script>
+</body>
 </html>
