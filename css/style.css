@@ -17,7 +17,10 @@ body { font-family: Arial, Helvetica, sans-serif; color: #0a3d62; background: #f
   padding: 14px 0;
 }
 .brand-left { display: flex; align-items: center; gap: 14px; min-width: 260px; }
-.logo { width: 120px; height: auto; display: block; }
+.logo {.logo {
+  width: 85px;   /* smaller like before */
+  height: auto;
+} }
 
 .brand-name { display: flex; flex-direction: column; line-height: 1; }
 .brand-crown { font-size: 34px; font-weight: 900; letter-spacing: 1px; color: #f7931e; }
