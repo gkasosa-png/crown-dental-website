@@ -111,6 +111,10 @@ footer p { margin: 0; opacity: 0.85; }
   .service-grid { grid-template-columns: 1fr; }
   .hero-content h1 { font-size: 36px; }
   .logo { width: 105px; }
-  .brand-crown { font-size: 30px; }
-  .brand-dental { font-size: 20px; }
+  .brand-crown { font-size: 28px;
+  font-weight: 900;
+  color: #f7931e; }
+  .brand-dental {  font-size: 18px;
+  font-weight: 800;
+  color: #00a3e0; }
 }
