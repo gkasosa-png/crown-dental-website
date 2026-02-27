@@ -8,26 +8,26 @@
 </head>
 <body>
 
-<header>
+<header class="site-header">
   <div class="container nav">
-
-    <div class="brand-area">
+    <!-- Logo stays in the corner -->
+    <a href="index.html" class="logo-wrap" aria-label="Crown Dental Clinic Home">
       <img src="logo.jpg" alt="Crown Dental Clinic Logo" class="logo" />
+    </a>
 
-      <div class="brand-text">
-        <span class="brand-crown">CROWN</span>
-        <span class="brand-dental">Dental Clinic</span>
-      </div>
+    <!-- Name alone (separate) -->
+    <div class="site-title">
+      <span class="title-crown">CROWN</span>
+      <span class="title-dental">Dental Clinic</span>
     </div>
 
-    <nav>
+    <nav class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html">Contact</a>
     </nav>
-
   </div>
 </header>
 
@@ -38,7 +38,6 @@
       We provide a wide range of professional and high-end dental services,
       from routine check-ups and treating oral diseases to braces.
     </p>
-
     <div class="hero-buttons">
       <a href="contact.html" class="btn-primary">Book an Appointment</a>
       <a href="tel:+260975623433" class="btn-secondary">Call Makeni</a>
@@ -49,7 +48,6 @@
 <section class="services-preview">
   <div class="container">
     <h2>Our Services</h2>
-
     <div class="service-grid">
       <div class="card">Routine Check-Ups</div>
       <div class="card">Teeth Whitening</div>
@@ -62,20 +60,17 @@
 <section class="location">
   <div class="container">
     <h2>Visit Us</h2>
-
-    <div class="service-grid" style="margin-top:20px;">
+    <div class="service-grid" style="margin-top:18px;">
       <div class="card">
         <strong>Makeni Branch</strong>
         <p style="margin-top:10px;">
           Makeni Mall, 1st Floor, Lusaka, Zambia<br>
           <small>Coordinates: -15.453255914038454, 28.265978584654853</small>
         </p>
-        <div style="margin-top:12px;">
-          <a class="btn-secondary" target="_blank"
-             href="https://www.google.com/maps/search/?api=1&query=-15.453255914038454%2C28.265978584654853">
-            Get Directions
-          </a>
-        </div>
+        <a class="btn-secondary" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=-15.453255914038454%2C28.265978584654853">
+          Get Directions
+        </a>
       </div>
 
       <div class="card">
@@ -84,15 +79,12 @@
           Munali Road, Lusaka, Zambia<br>
           <small>Coordinates: -15.365595919259611, 28.346291530411822</small>
         </p>
-        <div style="margin-top:12px;">
-          <a class="btn-secondary" target="_blank"
-             href="https://www.google.com/maps/search/?api=1&query=-15.365595919259611%2C28.346291530411822">
-            Get Directions
-          </a>
-        </div>
+        <a class="btn-secondary" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=-15.365595919259611%2C28.346291530411822">
+          Get Directions
+        </a>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -102,19 +94,17 @@
   </div>
 </footer>
 
-<!-- Floating WhatsApp Menu -->
+<!-- Floating WhatsApp menu -->
 <div class="wa-float">
   <button class="wa-main" type="button">WhatsApp</button>
   <div class="wa-menu">
     <a href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic%20Makeni,%20I%20would%20like%20to%20book%20an%20appointment."
-       target="_blank">Book Makeni</a>
-
+       target="_blank" rel="noopener">Book Makeni</a>
     <a href="https://wa.me/260776112421?text=Hello%20Crown%20Dental%20Clinic%20Munali,%20I%20would%20like%20to%20book%20an%20appointment."
-       target="_blank">Book Munali</a>
+       target="_blank" rel="noopener">Book Munali</a>
   </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
