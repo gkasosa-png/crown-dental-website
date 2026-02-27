@@ -26,109 +26,27 @@
     <h2>Book an Appointment</h2>
     <p>Select your branch, then book on WhatsApp or submit the booking form.</p>
 
-    <!-- Branch selector -->
     <div class="card" style="max-width:820px; margin:18px auto; text-align:left;">
       <label for="branch" style="font-weight:700;">Choose Branch</label>
       <select id="branch" style="width:100%; padding:12px; margin-top:10px; border-radius:10px; border:1px solid #d9e3ea;">
-        <option value="makeni" selected>Makeni Branch (Makeni Mall)</option>
-        <option value="munali">Munali Branch (Munali Road)</option>
+        <option value="makeni" selected>Makeni Branch</option>
+        <option value="munali">Munali Branch</option>
       </select>
 
       <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
-        <a id="waBtn" class="btn-primary" target="_blank" rel="noopener"
-           href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic%20Makeni,%20I%20would%20like%20to%20book%20an%20appointment.">
+        <a id="waBtn" class="btn-primary" target="_blank" rel="noopener">
           Book on WhatsApp
         </a>
 
-        <a id="callBtn" class="btn-secondary" href="tel:+260975623433">Call Now</a>
+        <a id="callBtn" class="btn-secondary">Call Now</a>
 
-        <a id="dirBtn" class="btn-secondary" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/search/?api=1&query=-15.453255914038454%2C28.265978584654853">
+        <a id="dirBtn" class="btn-secondary" target="_blank" rel="noopener">
           Get Directions
         </a>
       </div>
 
-      <p id="branchInfo" style="margin-top:14px;">
-        <strong>Makeni Branch:</strong> Makeni Mall, 1st Floor, Lusaka.
-        Phone/WhatsApp: +260 975 623 433 • Email: makenicrowndental@gmail.com
-      </p>
+      <p id="branchInfo" style="margin-top:14px;"></p>
     </div>
-
-    <!-- Booking form (routes to branch email) -->
-    <div class="card" style="max-width:820px; margin:18px auto; text-align:left;">
-      <h3 style="margin-top:0;">Online Booking Form</h3>
-      <p style="margin-top:6px;">Fill in details and we will confirm your appointment.</p>
-
-      <!-- We will dynamically set this form action to the correct branch email -->
-      <form id="bookingForm" action="https://formsubmit.co/makenicrowndental@gmail.com" method="POST">
-        <!-- FormSubmit settings -->
-        <input type="hidden" name="_subject" value="New Appointment Request - Crown Dental Clinic" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="Selected Branch" id="branchHidden" value="Makeni Branch" />
-
-        <div style="display:grid; gap:12px;">
-          <input name="Full Name" required placeholder="Full Name"
-                 style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;" />
-
-          <input name="Phone Number" required placeholder="Phone Number"
-                 style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;" />
-
-          <select name="Branch" id="branchForm"
-                  style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;">
-            <option value="Makeni Branch" selected>Makeni Branch</option>
-            <option value="Munali Branch">Munali Branch</option>
-          </select>
-
-          <input name="Preferred Date" placeholder="Preferred Date (e.g. 02 March 2026)"
-                 style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;" />
-
-          <input name="Preferred Time" placeholder="Preferred Time (e.g. 10:00)"
-                 style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;" />
-
-          <select name="Service"
-                  style="padding:12px; border-radius:10px; border:1px solid #d9e3ea;">
-            <option>Routine Check-Up</option>
-            <option>Cleaning</option>
-            <option>Tooth Pain / Emergency</option>
-            <option>Teeth Whitening</option>
-            <option>Braces Consultation</option>
-            <option>Other</option>
-          </select>
-
-          <textarea name="Notes" placeholder="Short message (optional)"
-                    style="padding:12px; border-radius:10px; border:1px solid #d9e3ea; min-height:110px;"></textarea>
-
-          <button type="submit" class="btn-primary" style="border:none; cursor:pointer;">
-            Submit Booking Request
-          </button>
-        </div>
-      </form>
-
-      <p style="margin-top:14px; font-size:14px; opacity:0.85;">
-        Note: First-time FormSubmit setup will send each email a confirmation link to activate delivery.
-      </p>
-    </div>
-
-    <!-- Maps (Embedded using your coordinates) -->
-    <div class="service-grid" style="margin-top:22px;">
-      <div class="card" style="text-align:left;">
-        <h3 style="margin-top:0;">Makeni Branch Map</h3>
-        <iframe
-          src="https://www.google.com/maps?q=-15.453255914038454,28.265978584654853&output=embed"
-          width="100%" height="280" style="border:0; border-radius:12px;"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
-      <div class="card" style="text-align:left;">
-        <h3 style="margin-top:0;">Munali Branch Map</h3>
-        <iframe
-          src="https://www.google.com/maps?q=-15.365595919259611,28.346291530411822&output=embed"
-          width="100%" height="280" style="border:0; border-radius:12px;"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -138,78 +56,63 @@
   </div>
 </footer>
 
-<!-- Floating WhatsApp button (updates with branch) -->
+<!-- Floating WhatsApp Button -->
 <a class="whatsapp-float"
-   href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic%20Makeni,%20I%20would%20like%20to%20book%20an%20appointment."
-   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+   href="#"
+   target="_blank"
+   rel="noopener">
+   WhatsApp
+</a>
 
+<!-- Contact Page Branch Logic -->
 <script>
-  const BRANCH = {
-    makeni: {
-      label: "Makeni Branch",
-      phone: "+260975623433",
-      email: "makenicrowndental@gmail.com",
-      waText: "Hello Crown Dental Clinic Makeni, I would like to book an appointment.",
-      directions: "https://www.google.com/maps/search/?api=1&query=-15.453255914038454%2C28.265978584654853",
-      info: "<strong>Makeni Branch:</strong> Makeni Mall, 1st Floor, Lusaka. Phone/WhatsApp: +260 975 623 433 • Email: makenicrowndental@gmail.com"
-    },
-    munali: {
-      label: "Munali Branch",
-      phone: "+260776112421",
-      email: "munalicrowndental@gmail.com",
-      waText: "Hello Crown Dental Clinic Munali, I would like to book an appointment.",
-      directions: "https://www.google.com/maps/search/?api=1&query=-15.365595919259611%2C28.346291530411822",
-      info: "<strong>Munali Branch:</strong> Munali Road, Lusaka. Phone/WhatsApp: +260 776 112 421 • Email: munalicrowndental@gmail.com"
-    }
-  };
-
-  const branchSel = document.getElementById("branch");
-  const waBtn = document.getElementById("waBtn");
-  const callBtn = document.getElementById("callBtn");
-  const dirBtn  = document.getElementById("dirBtn");
-  const branchInfo = document.getElementById("branchInfo");
-  const branchForm = document.getElementById("branchForm");
-  const bookingForm = document.getElementById("bookingForm");
-  const branchHidden = document.getElementById("branchHidden");
-
-  function setBranch(key){
-    const b = BRANCH[key];
-    const wa = "https://wa.me/" + b.phone.replace("+","") + "?text=" + encodeURIComponent(b.waText);
-
-    waBtn.href = wa;
-    callBtn.href = "tel:" + b.phone;
-    dirBtn.href = b.directions;
-    branchInfo.innerHTML = b.info;
-
-    // Sync form branch dropdown + hidden branch field
-    branchForm.value = b.label;
-    branchHidden.value = b.label;
-
-    // Route form submission to the correct branch email
-    bookingForm.action = "https://formsubmit.co/" + b.email;
-
-    // Sync floating WhatsApp button
-    const floatBtn = document.querySelector(".whatsapp-float");
-    if(floatBtn) floatBtn.href = wa;
+const BRANCH = {
+  makeni: {
+    phone: "+260975623433",
+    email: "makenicrowndental@gmail.com",
+    waText: "Hello Crown Dental Clinic Makeni, I would like to book an appointment.",
+    directions: "https://www.google.com/maps/search/?api=1&query=-15.453255914038454%2C28.265978584654853",
+    info: "<strong>Makeni Branch:</strong> Makeni Mall, Lusaka • +260 975 623 433"
+  },
+  munali: {
+    phone: "+260776112421",
+    email: "munalicrowndental@gmail.com",
+    waText: "Hello Crown Dental Clinic Munali, I would like to book an appointment.",
+    directions: "https://www.google.com/maps/search/?api=1&query=-15.365595919259611%2C28.346291530411822",
+    info: "<strong>Munali Branch:</strong> Munali Road, Lusaka • +260 776 112 421"
   }
+};
 
-  branchSel.addEventListener("change", (e)=> setBranch(e.target.value));
+const branchSel = document.getElementById("branch");
+const waBtn = document.getElementById("waBtn");
+const callBtn = document.getElementById("callBtn");
+const dirBtn = document.getElementById("dirBtn");
+const branchInfo = document.getElementById("branchInfo");
+const floatBtn = document.querySelector(".whatsapp-float");
 
-  // If user changes branch inside the form, sync selector too
-  branchForm.addEventListener("change", (e)=>{
-    if(e.target.value.includes("Munali")) setBranch("munali");
-    else setBranch("makeni");
-    branchSel.value = e.target.value.includes("Munali") ? "munali" : "makeni";
-  });
+function setBranch(key){
+  localStorage.setItem("crown_branch", key);
 
-  // init
-  setBranch(branchSel.value);
+  const b = BRANCH[key];
+  const wa = "https://wa.me/" + b.phone.replace("+","") + "?text=" + encodeURIComponent(b.waText);
+
+  waBtn.href = wa;
+  callBtn.href = "tel:" + b.phone;
+  dirBtn.href = b.directions;
+  branchInfo.innerHTML = b.info;
+  floatBtn.href = wa;
+}
+
+branchSel.addEventListener("change", (e)=> setBranch(e.target.value));
+
+// Load saved branch
+const saved = localStorage.getItem("crown_branch") || "makeni";
+branchSel.value = saved;
+setBranch(saved);
 </script>
 
-</body>
-  <a class="whatsapp-float"
-   href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic,%20I%20would%20like%20to%20book%20an%20appointment."
-   target="_blank" rel="noopener">WhatsApp</a>
-
+<!-- Site-wide script -->
 <script src="script.js"></script>
+
+</body>
 </html>
