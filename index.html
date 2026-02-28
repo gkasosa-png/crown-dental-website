@@ -5,10 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crown Dental Clinic | Premium Dental Care in Lusaka</title>
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ===== Page fade-in ===== */
+    body { opacity: 0; transition: opacity 0.6s ease; }
+    body.page-ready { opacity: 1; }
+
+    /* ===== Header shadow on scroll ===== */
+    .site-header.header-shadow {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+    }
+
+    /* ===== Card hover animation ===== */
+    .card {
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.10);
+      border-color: #dbe6ef;
+    }
+
+    /* ===== Gallery thumbnails ===== */
+    .thumb {
+      padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .thumb img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .thumb:hover img { transform: scale(1.05); }
+
+    /* ===== Modal ===== */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      padding: 18px;
+    }
+    .modal.open { display: flex; }
+    .modal-card {
+      width: min(980px, 100%);
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+    }
+    .modal-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-bottom: 1px solid #eef3f7;
+      color: #0a3d62;
+      font-weight: 900;
+    }
+    .modal-close {
+      border: none;
+      background: #f2f6f9;
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 900;
+      color: #0a3d62;
+    }
+    .modal-body img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== Better mobile spacing ===== */
+    @media (max-width: 520px){
+      .hero { padding: 56px 0; }
+      .section { padding: 34px 0; }
+      .hero-content h1 { font-size: 34px; }
+      .hero-buttons { gap: 10px; }
+      .thumb img { height: 160px; }
+    }
+
+    /* Footer centered */
+    footer .container { text-align: center; }
+  </style>
 </head>
+
 <body>
 
-<header class="site-header">
+<header class="site-header" id="siteHeader">
   <div class="container nav">
     <div class="brand-left">
       <a href="index.html">
@@ -37,25 +129,73 @@
       We provide a wide range of professional and high-end dental services,
       from routine check-ups and treating oral diseases to braces.
     </p>
+
     <div class="hero-buttons">
       <a href="contact.html" class="btn-primary">Book an Appointment</a>
-      <a href="tel:+260975623433" class="btn-secondary">Call Makeni</a>
+      <a href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic%20Makeni,%20I%20would%20like%20to%20book%20an%20appointment."
+         target="_blank" rel="noopener" class="btn-secondary">Book Makeni</a>
+
+      <a href="https://wa.me/260776112421?text=Hello%20Crown%20Dental%20Clinic%20Munali,%20I%20would%20like%20to%20book%20an%20appointment."
+         target="_blank" rel="noopener" class="btn-secondary">Book Munali</a>
     </div>
   </div>
 </section>
 
+<!-- SERVICES (12 + many more) -->
 <section class="section">
   <div class="container">
     <h2>Our Services</h2>
+
     <div class="service-grid">
-      <div class="card">Routine Check-Ups</div>
-      <div class="card">Teeth Whitening</div>
-      <div class="card">Braces & Orthodontics</div>
-      <div class="card">Oral Disease Treatment</div>
+      <div class="card"><strong>Routine Check-Ups</strong><p style="margin-top:10px;">Preventive oral health care.</p></div>
+      <div class="card"><strong>Dental Cleaning</strong><p style="margin-top:10px;">Professional scaling & polishing.</p></div>
+      <div class="card"><strong>Teeth Whitening</strong><p style="margin-top:10px;">Safe brightening treatments.</p></div>
+      <div class="card"><strong>Braces & Orthodontics</strong><p style="margin-top:10px;">Alignment solutions for all ages.</p></div>
+
+      <div class="card"><strong>Fillings</strong><p style="margin-top:10px;">Restore teeth affected by cavities.</p></div>
+      <div class="card"><strong>Extractions</strong><p style="margin-top:10px;">Comfort-focused removal when needed.</p></div>
+      <div class="card"><strong>Root Canal Treatment</strong><p style="margin-top:10px;">Save infected teeth professionally.</p></div>
+      <div class="card"><strong>Gum Disease Care</strong><p style="margin-top:10px;">Treatment for bleeding gums & infection.</p></div>
+
+      <div class="card"><strong>Tooth Pain / Emergency</strong><p style="margin-top:10px;">Fast support for urgent cases.</p></div>
+      <div class="card"><strong>Dental Consultation</strong><p style="margin-top:10px;">Professional assessment & advice.</p></div>
+      <div class="card"><strong>Cosmetic Dentistry</strong><p style="margin-top:10px;">Improve smile aesthetics with care.</p></div>
+      <div class="card"><strong>Kids Dentistry</strong><p style="margin-top:10px;">Friendly dental care for children.</p></div>
+
+      <div class="card"><strong>And many more…</strong><p style="margin-top:10px;">Talk to us for more services.</p></div>
     </div>
   </div>
 </section>
 
+<!-- MINI GALLERY (click-to-view modal) -->
+<section class="section">
+  <div class="container">
+    <h2>Gallery</h2>
+    <p>Click any image to view.</p>
+
+    <div class="service-grid" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+      <!-- Replace these image filenames with your real images in root or in a folder -->
+      <div class="card thumb" data-img="logo.jpg" data-title="Crown Dental Clinic">
+        <img src="logo.jpg" alt="Gallery Image 1">
+      </div>
+      <div class="card thumb" data-img="logo.jpg" data-title="Clinic">
+        <img src="logo.jpg" alt="Gallery Image 2">
+      </div>
+      <div class="card thumb" data-img="logo.jpg" data-title="Dental Care">
+        <img src="logo.jpg" alt="Gallery Image 3">
+      </div>
+      <div class="card thumb" data-img="logo.jpg" data-title="Professional Service">
+        <img src="logo.jpg" alt="Gallery Image 4">
+      </div>
+    </div>
+
+    <div style="margin-top:18px;">
+      <a href="gallery.html" class="btn-primary">View Full Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT US (NO COORDINATES) -->
 <section class="section">
   <div class="container">
     <h2>Visit Us</h2>
@@ -63,10 +203,7 @@
     <div class="service-grid">
       <div class="card">
         <strong>Makeni Branch</strong>
-        <p style="margin-top:10px;">
-          Makeni Mall, 1st Floor, Lusaka<br>
-          <small>-15.453255914038454, 28.265978584654853</small>
-        </p>
+        <p style="margin-top:10px;">Makeni Mall, 1st Floor, Lusaka, Zambia</p>
         <a class="btn-secondary" target="_blank" rel="noopener"
            href="https://www.google.com/maps/search/?api=1&query=-15.453255914038454%2C28.265978584654853">
           Get Directions
@@ -75,17 +212,13 @@
 
       <div class="card">
         <strong>Munali Branch</strong>
-        <p style="margin-top:10px;">
-          Munali Road, Lusaka<br>
-          <small>-15.365595919259611, 28.346291530411822</small>
-        </p>
+        <p style="margin-top:10px;">Munali Road, Lusaka, Zambia</p>
         <a class="btn-secondary" target="_blank" rel="noopener"
            href="https://www.google.com/maps/search/?api=1&query=-15.365595919259611%2C28.346291530411822">
           Get Directions
         </a>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -109,6 +242,68 @@
     </a>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal" id="imgModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true">
+    <div class="modal-top">
+      <span id="modalTitle">Preview</span>
+      <button class="modal-close" id="modalClose" type="button">Close</button>
+    </div>
+    <div class="modal-body">
+      <img id="modalImage" src="" alt="Preview">
+    </div>
+  </div>
+</div>
+
+<script>
+  // Fade-in on load
+  window.addEventListener("load", () => {
+    document.body.classList.add("page-ready");
+  });
+
+  // Header shadow on scroll
+  const header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 8) header.classList.add("header-shadow");
+    else header.classList.remove("header-shadow");
+  });
+
+  // Gallery modal
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalClose = document.getElementById("modalClose");
+
+  function openModal(src, title){
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    modalImg.src = src;
+    modalTitle.textContent = title || "Preview";
+  }
+
+  function closeModal(){
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    modalImg.src = "";
+  }
+
+  document.querySelectorAll(".thumb").forEach(el => {
+    el.addEventListener("click", () => {
+      openModal(el.getAttribute("data-img"), el.getAttribute("data-title"));
+    });
+  });
+
+  modalClose.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Escape closes modal
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+</script>
 
 </body>
 </html>
