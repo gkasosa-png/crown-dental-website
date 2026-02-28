@@ -1,0 +1,120 @@
+/* Crown Dental Clinic - Clean Clinical Theme */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: Arial, Helvetica, sans-serif; color: #0a3d62; background: #ffffff; }
+
+/* Layout */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 18px; }
+
+/* Header */
+.site-header { background: #fff; border-bottom: 1px solid #eef3f7; }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+}
+.brand-left { display: flex; align-items: center; gap: 14px; min-width: 260px; }
+.logo {.logo {
+  width: 85px;   /* smaller like before */
+  height: auto;
+} }
+
+.brand-name { display: flex; flex-direction: column; line-height: 1; }
+.brand-crown { font-size: 34px; font-weight: 900; letter-spacing: 1px; color: #f7931e; }
+.brand-dental { font-size: 22px; font-weight: 800; color: #00a3e0; }
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #0a3d62;   /* dark blue */
+  margin-left: 18px;
+}
+
+.nav-links a:hover {
+  color: #f7931e;   /* orange on hover */
+}
+
+.nav-links a.active {
+  color: #f7931e;   /* active tab orange */
+}
+
+/* Hero */
+.hero {
+  padding: 70px 0;
+  background: linear-gradient(180deg, #0b5b93 0%, #0a4a7a 100%);
+  color: #fff;
+}
+.hero-content { text-align: center; }
+.hero-content h1 { margin: 0 0 12px; font-size: 48px; }
+.hero-content p { margin: 0 auto; max-width: 780px; opacity: 0.95; line-height: 1.6; }
+.hero-buttons { margin-top: 18px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 900;
+  text-decoration: none;
+}
+.btn-primary { background: #f7931e; color: #fff; }
+.btn-secondary { background: #ffffff; color: #0a3d62; }
+
+/* Sections */
+.section { padding: 44px 0; }
+.section h2 { margin: 0 0 14px; font-size: 30px; }
+.section p { margin: 0; line-height: 1.6; opacity: 0.95; }
+
+/* Cards / Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.card {
+  background: #ffffff;
+  border: 1px solid #eef3f7;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+footer { border-top: 1px solid #eef3f7; padding: 22px 0; }
+footer p { margin: 0; opacity: 0.85; }
+
+/* Floating WhatsApp */
+.wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 9999; }
+.wa-main {
+  background:#25D366; color:#fff; border:none; padding:12px 16px; border-radius:999px;
+  font-weight:900; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,0.18);
+}
+.wa-menu {
+  display:none; margin-top:10px; background:#fff; border-radius:14px; overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.18);
+}
+.wa-menu a { display:block; padding:12px 14px; text-decoration:none; color:#0a3d62; font-weight:900; }
+.wa-menu a:hover { background:#f2f6f9; }
+.wa-float:hover .wa-menu { display:block; }
+
+/* Responsive */
+@media (max-width: 900px){
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nav { flex-wrap: wrap; }
+  .brand-left { width: 100%; }
+}
+@media (max-width: 520px){
+  .service-grid { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 36px; }
+  .logo { width: 105px; }
+  .brand-crown { font-size: 28px;
+  font-weight: 900;
+  color: #f7931e; }
+  .brand-dental {  font-size: 18px;
+  font-weight: 800;
+  color: #00a3e0; }
+}
