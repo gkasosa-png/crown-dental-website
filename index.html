@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crown Dental Clinic | Premium Dental Care in Lusaka</title>
-
-  <!-- Use your current CSS file (leave as-is) -->
   <link rel="stylesheet" href="style.css" />
 
   <style>
@@ -13,7 +11,7 @@
     body { opacity: 0; transition: opacity 0.6s ease; }
     body.page-ready { opacity: 1; }
 
-    /* ===== Header shadow on scroll (subtle) ===== */
+    /* ===== Header shadow on scroll ===== */
     .site-header.header-shadow {
       box-shadow: 0 10px 25px rgba(0,0,0,0.10);
     }
@@ -86,7 +84,7 @@
       display: block;
     }
 
-    /* ===== Mobile spacing improvements ===== */
+    /* ===== Better mobile spacing ===== */
     @media (max-width: 520px){
       .hero { padding: 56px 0; }
       .section { padding: 34px 0; }
@@ -95,7 +93,7 @@
       .thumb img { height: 160px; }
     }
 
-    /* ===== Footer centered ===== */
+    /* Footer centered */
     footer .container { text-align: center; }
   </style>
 </head>
@@ -105,10 +103,9 @@
 <header class="site-header" id="siteHeader">
   <div class="container nav">
     <div class="brand-left">
-      <a href="index.html" aria-label="Crown Dental Clinic Home">
+      <a href="index.html">
         <img src="logo.jpg" class="logo" alt="Crown Dental Clinic Logo">
       </a>
-
       <div class="brand-name">
         <div class="brand-crown">CROWN</div>
         <div class="brand-dental">Dental Clinic</div>
@@ -135,7 +132,6 @@
 
     <div class="hero-buttons">
       <a href="contact.html" class="btn-primary">Book an Appointment</a>
-
       <a href="https://wa.me/260975623433?text=Hello%20Crown%20Dental%20Clinic%20Makeni,%20I%20would%20like%20to%20book%20an%20appointment."
          target="_blank" rel="noopener" class="btn-secondary">Book Makeni</a>
 
@@ -171,27 +167,25 @@
   </div>
 </section>
 
-<!-- HOME GALLERY (click-to-view modal) -->
+<!-- MINI GALLERY (click-to-view modal) -->
 <section class="section">
   <div class="container">
     <h2>Gallery</h2>
-    <p>Click any photo to view.</p>
+    <p>Click any image to view.</p>
 
     <div class="service-grid" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
-      <div class="card thumb" data-img="g1-reception.jpg" data-title="Our Team & Reception">
-        <img src="g1-reception.jpg" alt="Crown Dental Clinic Team at Reception">
+      <!-- Replace these image filenames with your real images in root or in a folder -->
+      <div class="card thumb" data-img="logo.jpg" data-title="Crown Dental Clinic">
+        <img src="logo.jpg" alt="Gallery Image 1">
       </div>
-
-      <div class="card thumb" data-img="g2-smile.jpg" data-title="Smile Transformation">
-        <img src="g2-smile.jpg" alt="Smile Transformation">
+      <div class="card thumb" data-img="logo.jpg" data-title="Clinic">
+        <img src="logo.jpg" alt="Gallery Image 2">
       </div>
-
-      <div class="card thumb" data-img="g3-chair.jpg" data-title="Modern Dental Chair">
-        <img src="g3-chair.jpg" alt="Modern Dental Chair">
+      <div class="card thumb" data-img="logo.jpg" data-title="Dental Care">
+        <img src="logo.jpg" alt="Gallery Image 3">
       </div>
-
-      <div class="card thumb" data-img="g4-room.jpg" data-title="Treatment Room">
-        <img src="g4-room.jpg" alt="Treatment Room">
+      <div class="card thumb" data-img="logo.jpg" data-title="Professional Service">
+        <img src="logo.jpg" alt="Gallery Image 4">
       </div>
     </div>
 
@@ -201,7 +195,7 @@
   </div>
 </section>
 
-<!-- VISIT US (no coordinates shown) -->
+<!-- VISIT US (NO COORDINATES) -->
 <section class="section">
   <div class="container">
     <h2>Visit Us</h2>
@@ -210,25 +204,19 @@
       <div class="card">
         <strong>Makeni Branch</strong>
         <p style="margin-top:10px;">Makeni Mall, 1st Floor, Lusaka, Zambia</p>
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn-secondary" target="_blank" rel="noopener"
-             href="https://www.google.com/maps/search/?api=1&query=-15.453255914038454%2C28.265978584654853">
-            Get Directions
-          </a>
-          <a class="btn-secondary" href="tel:+260975623433">Call Makeni</a>
-        </div>
+        <a class="btn-secondary" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=-15.453255914038454%2C28.265978584654853">
+          Get Directions
+        </a>
       </div>
 
       <div class="card">
         <strong>Munali Branch</strong>
         <p style="margin-top:10px;">Munali Road, Lusaka, Zambia</p>
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn-secondary" target="_blank" rel="noopener"
-             href="https://www.google.com/maps/search/?api=1&query=-15.365595919259611%2C28.346291530411822">
-            Get Directions
-          </a>
-          <a class="btn-secondary" href="tel:+260776112421">Call Munali</a>
-        </div>
+        <a class="btn-secondary" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=-15.365595919259611%2C28.346291530411822">
+          Get Directions
+        </a>
       </div>
     </div>
   </div>
@@ -240,7 +228,7 @@
   </div>
 </footer>
 
-<!-- WhatsApp Floating Menu (Makeni + Munali) -->
+<!-- WhatsApp Floating Menu -->
 <div class="wa-float">
   <button class="wa-main" type="button">WhatsApp</button>
   <div class="wa-menu">
@@ -255,7 +243,7 @@
   </div>
 </div>
 
-<!-- Image Modal -->
+<!-- Modal -->
 <div class="modal" id="imgModal" aria-hidden="true">
   <div class="modal-card" role="dialog" aria-modal="true">
     <div class="modal-top">
@@ -311,6 +299,7 @@
     if (e.target === modal) closeModal();
   });
 
+  // Escape closes modal
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
